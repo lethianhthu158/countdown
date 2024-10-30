@@ -1,0 +1,134 @@
+.container-website {
+    display: grid;
+    grid-template-rows: 20% 10% 60% 10%;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: relative;
+
+}
+.container-coundown{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+
+  
+
+   
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 40px;
+    transition: grid-template-columns 1s ease-in-out, padding 1s ease-in-out;
+    
+    
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-family: Courier;
+}
+.year{
+    font-size: 10vw;
+}
+.newyear{
+    font-size: 5vw
+}
+@media (max-width:876px) {
+    .container-coundown {
+        animation: moveToTwoColumns 1s ease-in-out forwards;
+        grid-template-columns: repeat(2, 1fr); /* Giảm số cột xuống 2 trên màn hình nhỏ hơn */
+        padding: 30px;
+    }
+
+    .year {
+        font-size: 8vw; /* Giảm kích thước cho năm */
+    }
+
+    .newyear {
+        font-size: 4vw; /* Giảm kích thước cho năm mới */
+    }
+    
+}
+@keyframes moveToTwoColumns {
+    // 0% {
+    //     transform: scale(1); /* Bắt đầu từ kích thước ban đầu */
+    // }
+    // 50% {
+    //     transform: scale(1.05); /* Phóng to một chút để tạo cảm giác "bay" */
+    // }
+    // 100% {
+    //     transform: scale(1); /* Trở về kích thước ban đầu */
+    // }
+    0% {
+        opacity: 0; /* Bắt đầu trong suốt */
+    }
+    50% {
+        transform: translateY(10px); /* Di chuyển một chút xuống */
+        opacity: 0.5; /* Bán trong suốt để tạo cảm giác bay */
+    }
+    100% {
+        transform: translateY(0); /* Trở về vị trí ban đầu */
+        opacity: 1; /* Hoàn toàn không trong suốt */
+    }
+}
+
+@media (max-width: 480px) {
+    .container-coundown {
+        grid-template-columns: 1fr; /* Một cột trên màn hình rất nhỏ */
+        padding: 20px;
+    }
+
+    .year {
+        font-size: 6vw; /* Giảm kích thước cho năm */
+    }
+
+    .newyear {
+        font-size: 3vw; /* Giảm kích thước cho năm mới */
+    }
+    
+}
+.Lunar-Button {
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    width: 30%;
+    font-size: 2vw;
+    font-family: Courier ;
+    font-weight: 550;
+    margin: auto auto;
+    padding: 20px 30px;
+    cursor: pointer;
+}
+
+@keyframes flip {
+    0% {
+      transform: perspective(600px) rotateX(0deg);
+    }
+    25% {
+      opacity: 0.5;
+      transform: perspective(600px) rotateX(45deg);
+    }
+    50% {
+        opacity: 0.5;
+        transform: perspective(600px) rotateX(100deg);
+      }
+      75% {
+        opacity: 0.5;
+        transform: perspective(600px) rotateX(120deg);
+      }
+   
+    100% {
+      opacity: 1;
+      transform: perspective(1000px) rotateX(0deg);
+    }
+  }
+  
+  .flip {
+    animation: flip 1s ease forwards;
+  }

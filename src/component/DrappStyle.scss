@@ -1,0 +1,56 @@
+.container-content{
+    display: grid;
+    grid-template-rows: 70% 30%;
+
+
+
+    border: 2px solid white ;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.427);
+    grid-gap: 5px;
+    border-radius: 10px;
+    animation: borderChange 60s infinite;
+    
+}
+@keyframes borderChange{
+    0% { border-color: rgb(251, 251, 251); }
+    16.67% { border-color: blue; }
+    33.33% { border-color: rgb(128, 0, 0); }
+    50% { border-color: yellow; }
+    66.67% { border-color: rgb(9, 154, 60); }
+    83.33% { border-color: rgb(184, 33, 207); }
+    100% { border-color: red; }
+    
+    
+}
+.time-count{
+  
+    width: auto;
+    color:white;
+    font-family: Courier;
+    font-weight: 600;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.label-time{
+    border-top: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.427);
+    border-radius: 0 0 10px 10px;
+   
+
+}
+.label{
+    color:white;
+    font-family: Courier;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: Courier;
+  
+
+}
